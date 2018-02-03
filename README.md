@@ -57,3 +57,9 @@ Start the adventure!
 ```javascript
 aventura(questions);
 ```
+
+## API
+
+* `message: [string] (required)` - The prompting message of
+* `answer: [func|string] (required)` - Input from the player will be matched against this to see if he/she is allowed to move on to the next question
+* `responses [array] (optional)` - Any number of clues for the current question. If not supplied, Aventura will provide generic responses.
