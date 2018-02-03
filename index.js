@@ -1,8 +1,10 @@
 'use strict';
 const inquirer = require('inquirer');
 let numWrongAnswers = 0;
+let startTime;
 
 module.exports = steps => {
+  const startTime = Date.now();
   const questions = steps.map(({ message, answer, responses }, index) => {
     return {
       type: 'input',
@@ -27,7 +29,9 @@ module.exports = steps => {
   });
 
   inquirer.prompt(questions).then(answers => {
-    console.log('Success!');
+    const endTime = Date.now();
+    var timeDiff = (Math.abs(endTime- startTime) / 1000).toFixed(2);
+    console.log(`Success! You completed the game ${timeDiff} seconds`);
     console.log('');
     console.log(`
     ▄████  ▄▄▄       ███▄ ▄███▓▓█████     ▒█████   ██▒   █▓▓█████  ██▀███  
