@@ -1,0 +1,21 @@
+{
+  "name": "aventura",
+  "version": "0.0.2",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^5.0.1"
+  },
+  "scripts": {
+    "prettier-watch": "onchange '*.js' -- prettier --write {{changed}}",
+    "precommit": "pretty-quick --staged",
+    "dev": "concurrently \"nodemon index.js\" \"yarn prettier-watch\""
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.14.12",
+    "onchange": "^3.3.0",
+    "prettier": "^1.10.2",
+    "pretty-quick": "^1.2.3"
+  }
+}
